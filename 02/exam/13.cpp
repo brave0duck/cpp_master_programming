@@ -36,6 +36,5 @@ int main(){
         }
     
     }
-PROGRAM_EXIT:
     cout << "오늘 영업은 끝났습니다.";
 }
