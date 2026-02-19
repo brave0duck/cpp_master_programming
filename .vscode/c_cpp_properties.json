@@ -4,8 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/include",
-                "/usr/include/x86_64-linux-gnu/c++"
+                "/usr/include"                
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
@@ -15,7 +14,7 @@
             "browse": {
                 "path": [
                     "${workspaceFolder}",
-                    "/usr/include",
+                    "/usr/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true
             }

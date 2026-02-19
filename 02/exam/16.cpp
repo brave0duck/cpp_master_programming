@@ -16,15 +16,15 @@ int main(){
     cout << "텍스트의 끝은 ; 입니다. 10000개 까지 가능합니다." << endl;
     string alphabet = "abcdefghijklmnopqrstuvwxyz";
     
-    string s;
-    getline(cin,s,';');
+    // string s;
+    // getline(cin,s,';');
 
-    // string s =  "Wise men say, only fools rush in"
-    //             "But I can't help, falling In love with you"
-    //             "Shall I stay? Would it be a sin?"
-    //             "If I can't help, falling in love with you"
-    //             "Like a river flows, surely to the sea"
-    //             "Darling so it goes, some things aren't meant to be ;";
+    string s =  "Wise men say, only fools rush in"
+                "But I can't help, falling In love with you"
+                "Shall I stay? Would it be a sin?"
+                "If I can't help, falling in love with you"
+                "Like a river flows, surely to the sea"
+                "Darling so it goes, some things aren't meant to be ;";
 
     cout << "총 알파벳 수 " << s.length() << endl;
     for(int i=0; i< alphabet.length(); i++){
