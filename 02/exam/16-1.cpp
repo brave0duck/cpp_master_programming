@@ -4,20 +4,22 @@
 #include <string>
 using namespace std;
 
+// 문자열에 특정 문자가 몇번 반복되는지 배열에 저장하는 함수. 문자만 카운팅
+// dst[0]=a의개수 , dst[1]=b의개수 ...
 int HowMany(string *src,int dst[]){
     int count=0;
     for(int i=0; i< src->length(); i++){
-        if('a' <= src->at(i) && src->at(i) <= 'z'){
-            dst[src->at(i) -'a']++;
+        if('a' <= src->at(i) && src->at(i) <= 'z'){     //소문자라면
+            dst[src->at(i) -'a']++;                     // 배열 +1
             count++;
-        }else if('A' <= src->at(i) && src->at(i) <= 'Z'){
-            dst[src->at(i) - 'A']++;
+        }else if('A' <= src->at(i) && src->at(i) <= 'Z'){   //대문자라면
+            dst[src->at(i) - 'A']++;                        //배열 +1
             count++;
         }
     }
     return count;
 }
-void PrintStar(int n){
+inline void PrintStar(int n){
     for(int i=0; i<n ; i++){
         cout << "*";
     }
