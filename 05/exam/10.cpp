@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Buffer{
+    string text;
+public:
+    Buffer(string text){        this->text = text;    }
+    void add(string next){        text += next;    }
+    void print(){   std::cout << text << std::endl;}
+    
+};
+Buffer& append(Buffer &b,string s){
+        b.add(s);
+        return b;
+}
+int main(){
+    Buffer buf("Hello");
+    Buffer& temp = append(buf,"Guys");
+    temp.print();
+    buf.print();
+}
