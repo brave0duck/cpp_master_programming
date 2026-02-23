@@ -1,0 +1,65 @@
+1. (4) : c++의 함수호출방식 call by value, call by pointer, call by reference
+
+2. (1) : call by value방식이 비용이 크다
+
+3. 주소에 의한 호출
+
+4.(1) 같다- 포인터  (2) 다르다 - 포인터, 참조
+
+5. (1)5 (2)25
+
+6. 1 , 4, 9
+
+7. (2)
+
+8. (2). 값 복사이므로
+
+9. (1). 참조변수는 초기화가 되어야한다
+
+10. (1) 0,2,4,6,8,10,12,14,16,100
+    (2) 2,4,6,8,10,12,14,16,18,20
+    (3) 100,4,6,8,10,12,14,16,18
+    (4) 0,2,4,6,4,10,12,14,16,18
+
+11. 값에 의한 호출은 스택프레임이 제거될때 같이 삭제된다. 인수로 참조나 포인터를 넘겨야한다
+    void copy(int & dset, int &src);
+
+12. x=1 y=2
+    x=1 y=100
+
+13. MyClass::MyClass(); - 기본생성자
+    MyClass::MyClass(const MyClass & c); - 복사생성자
+
+14. (2) 복사생성자가 필요한경우 - 메모리상 생성과 초기화가 동시에 일어날때 (객체생성과 초기화가 동시에 일어날때, 함수의 매개변수에서 객체로 받을때, 함수리턴으로 받을때)
+
+15. (1) MyClass::~MyClass(){
+        if(element)
+            delete [] element;
+            element = NULL;
+    }
+    (2) MyClass::MyClass(const MyClass & c){
+        this->size = c.size;
+        this->element = c.element;
+    }
+    (3) MyClass::MyClass(const MyClass &c){
+        this->size = c.size;
+        this->element = new int[size];
+        for(int i=0; i<size; i++){
+            this->element[i] = 0;
+        }
+    }
+16. (1)
+
+17. Student::Student(const Student &s){
+    this->name = s.name;
+    this->id = s.id;
+    this->grade = s.grade;
+};
+
+18. Student::Student(const Student &s){
+    this->pName = s.pName;
+    this->pId = s.pId;
+    this->grade = s.grade;
+}
+19. 두 객체의 element가 같은 주소를 가리키게 된다. 
+즉, 하나가 소멸하거나 메모리가 해제되었을때 중복해제 크래쉬가 발생할수있다.
