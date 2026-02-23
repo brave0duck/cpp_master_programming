@@ -1,45 +1,31 @@
-// (3)까지 완료. 에러없이 작동은함
+// (4)까지 완료. 결론 : char* 보다 string이 편하다
 #include <iostream>
-#include <cstring>
+#include <string>
 using namespace std;
 
 class Book{
-    char * title;
+    string title;
     int price;
 public:
     Book();
-    Book(const char *title, int price);
-    Book(const Book &b);
+    Book(string s, int price);
     ~Book();
-    void set(const char* title,int price);
+    void set(string s,int price);
     void show(){cout << title << " , " << price << "원" << endl;}
 };
 
 Book::Book(){
-    this->title = NULL;
+    this->title = "";
     this->price =0;
 }
-Book::Book(const char* title, int price){
-    this->title = new char[strlen(title)+1];
-    strcpy(this->title,title);
+Book::Book(string s, int price){
+    this->title = s;
     this->price = price;
 }
-Book::Book(const Book &b){
-    this->title = new char[strlen(b.title)+1];
-    strcpy(this->title, b.title);
-    this->price = b.price;
+Book::~Book(){ 
 }
-Book::~Book(){
-    if(this->title){
-        delete [] this->title;
-    }
-}
-void Book::set(const char* title, int price){
-    if(this->title){
-        delete [] this->title;
-    }
-    this->title = new char[strlen(title)+1];
-    strcpy(this->title, title);
+void Book::set(string s, int price){
+    this->title = s;
     this->price = price;
 }
 int main(){
